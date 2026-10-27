@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register | PickleWithPurpose</title>
+<style>
+:root{--cream:#fbf8f1;--green:#204f3b;--sage:#dfe9df;--lime:#dbe95d;--ink:#17231c;--muted:#68756e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+a{color:var(--green)}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5dfd3;background:#fbf8f1}
+.brand{font-weight:900;color:var(--green);text-decoration:none;font-size:22px}
+main{max-width:1000px;margin:auto;padding:60px 24px 90px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--green)}
+h1{font-size:clamp(48px,8vw,78px);line-height:.95;color:var(--green);margin:10px 0 18px}
+h2{color:var(--green);font-size:34px;margin-bottom:8px}
+.lead{font-size:18px;max-width:760px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.box{background:#fff;border-radius:28px;padding:30px;box-shadow:0 12px 34px rgba(0,0,0,.05)}
+.notice{background:var(--sage);border-radius:22px;padding:22px;margin:24px 0}
+label{font-weight:800;display:block;margin-top:14px;color:var(--green)}
+input,select{width:100%;padding:13px 14px;border:1px solid #cfd4d1;border-radius:12px;margin-top:6px;font:inherit;background:#fff}
+button{display:inline-block;border:0;background:var(--green);color:#fff;padding:13px 20px;border-radius:999px;font-weight:800;cursor:pointer;margin-top:18px}
+.small{font-size:13px;color:var(--muted)}
+.back{display:inline-block;margin-top:28px;font-weight:800;text-decoration:none}
+@media(max-width:780px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="../">← PickleWithPurpose</a><a href="https://www.instagram.com/picklew1thpurpose" target="_blank" rel="noopener">@picklew1thpurpose</a></header>
+
+<main>
+<div class="eyebrow">Registration + updates</div>
+<h1>Join PickleWithPurpose</h1>
+<p class="lead">Our first Los Angeles tournament is <b>coming soon 👀</b>. Pricing and ticket checkout are not live yet, but you can register your interest or join the email list now.</p>
+
+<div class="notice"><b>All proceeds from future PickleWithPurpose ticket sales will be donated to the V Foundation for Cancer Research.</b> Additional donations can be made directly through the <a href="https://www.v.org/donate-now/" target="_blank" rel="noopener">V Foundation donation page</a>.</div>
+
+<div class="grid">
+<div class="box">
+  <div class="eyebrow">Tournament interest</div>
+  <h2>Want to play?</h2>
+  <form id="playerForm">
+    <label>Player 1 name<input id="p1" required></label>
+    <label>Player 1 email<input id="e1" type="email" required></label>
+    <label>Player 2 name<input id="p2"></label>
+    <label>Player 2 email<input id="e2" type="email"></label>
+    <label>Team name (optional)<input id="team"></label>
+    <label>Do you need a paddle?
+      <select id="paddle"><option>No</option><option>Yes</option><option>Not sure yet</option></select>
+    </label>
+    <button type="submit">Send Registration Interest</button>
+    <p class="small">This opens an email to Gaia and Rafi. It does not charge you or guarantee a spot yet.</p>
+  </form>
+</div>
+
+<div id="updates" class="box">
+  <div class="eyebrow">Future event updates</div>
+  <h2>Stay in the loop.</h2>
+  <p>Get emails about future tournaments, registration openings, and community events.</p>
+  <form id="updateForm">
+    <label>Your name<input id="uname" required></label>
+    <label>Your email<input id="uemail" type="email" required></label>
+    <button type="submit">Get Event Updates</button>
+    <p class="small">This opens an email asking to be added to the PickleWithPurpose update list.</p>
+  </form>
+</div>
+</div>
+
+<a class="back" href="../">← Back to main website</a>
+</main>
+
+<script>
+document.getElementById('playerForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const s=encodeURIComponent('PickleWithPurpose Tournament Interest');
+ const b=encodeURIComponent(
+ 'Player 1: '+document.getElementById('p1').value+'\n'+
+ 'Player 1 email: '+document.getElementById('e1').value+'\n'+
+ 'Player 2: '+document.getElementById('p2').value+'\n'+
+ 'Player 2 email: '+document.getElementById('e2').value+'\n'+
+ 'Team name: '+document.getElementById('team').value+'\n'+
+ 'Need a paddle: '+document.getElementById('paddle').value);
+ window.location.href='mailto:gaiagatto@icloud.com?cc=rafischaeffer@icloud.com&subject='+s+'&body='+b;
+});
+document.getElementById('updateForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const s=encodeURIComponent('Join PickleWithPurpose Update List');
+ const b=encodeURIComponent('Name: '+document.getElementById('uname').value+'\nEmail: '+document.getElementById('uemail').value+'\n\nPlease add me to updates for future PickleWithPurpose events.');
+ window.location.href='mailto:gaiagatto@icloud.com?cc=rafischaeffer@icloud.com&subject='+s+'&body='+b;
+});
+</script>
+</body>
+</html>
