@@ -33,63 +33,30 @@ button{display:inline-block;border:0;background:var(--green);color:#fff;padding:
 <main>
 <div class="eyebrow">Registration + updates</div>
 <h1>Join PickleWithPurpose</h1>
-<p class="lead">Our first Los Angeles tournament is <b>coming soon 👀</b>. Pricing and ticket checkout are not live yet, but you can register your interest or join the email list now.</p>
+<p class="lead">Our first Los Angeles tournament is <b>coming soon 👀</b>. Pricing and ticket checkout are not live yet, but you can register your interest or join the email list now using the forms below.</p>
 
 <div class="notice"><b>All proceeds from future PickleWithPurpose ticket sales will be donated to the V Foundation for Cancer Research.</b> Additional donations can be made directly through the <a href="https://www.v.org/donate-now/" target="_blank" rel="noopener">V Foundation donation page</a>.</div>
 
 <div class="grid">
 <div class="box">
-  <div class="eyebrow">Tournament interest</div>
+  <div class="eyebrow">Tournament registration</div>
   <h2>Want to play?</h2>
-  <form id="playerForm">
-    <label>Player 1 name<input id="p1" required></label>
-    <label>Player 1 email<input id="e1" type="email" required></label>
-    <label>Player 2 name<input id="p2"></label>
-    <label>Player 2 email<input id="e2" type="email"></label>
-    <label>Team name (optional)<input id="team"></label>
-    <label>Do you need a paddle?
-      <select id="paddle"><option>No</option><option>Yes</option><option>Not sure yet</option></select>
-    </label>
-    <button type="submit">Send Registration Interest</button>
-    <p class="small">This opens an email to Gaia and Rafi. It does not charge you or guarantee a spot yet.</p>
-  </form>
+  <p>Use our registration form to enter your player information and tell us whether you need a paddle.</p>
+  <a href="https://forms.gle/y3MBpFWdTXMGXznh9" target="_blank" rel="noopener"><button type="button">Open Registration Form</button></a>
+  <p class="small">Your responses will be saved through Google Forms. No email app will open.</p>
 </div>
 
 <div id="updates" class="box">
   <div class="eyebrow">Future event updates</div>
   <h2>Stay in the loop.</h2>
-  <p>Get emails about future tournaments, registration openings, and community events.</p>
-  <form id="updateForm">
-    <label>Your name<input id="uname" required></label>
-    <label>Your email<input id="uemail" type="email" required></label>
-    <button type="submit">Get Event Updates</button>
-    <p class="small">This opens an email asking to be added to the PickleWithPurpose update list.</p>
-  </form>
+  <p>Join our updates list for future tournaments, registration openings, and community events.</p>
+  <a href="https://forms.gle/5gBWkMRjgFLE4iVg8" target="_blank" rel="noopener"><button type="button">Get Event Updates</button></a>
+  <p class="small">Your name and email will be saved through our Google Form.</p>
 </div>
 </div>
 
 <a class="back" href="../">← Back to main website</a>
 </main>
 
-<script>
-document.getElementById('playerForm').addEventListener('submit',function(e){
- e.preventDefault();
- const s=encodeURIComponent('PickleWithPurpose Tournament Interest');
- const b=encodeURIComponent(
- 'Player 1: '+document.getElementById('p1').value+'\n'+
- 'Player 1 email: '+document.getElementById('e1').value+'\n'+
- 'Player 2: '+document.getElementById('p2').value+'\n'+
- 'Player 2 email: '+document.getElementById('e2').value+'\n'+
- 'Team name: '+document.getElementById('team').value+'\n'+
- 'Need a paddle: '+document.getElementById('paddle').value);
- window.location.href='mailto:gaiagatto@icloud.com?cc=rafischaeffer@icloud.com&subject='+s+'&body='+b;
-});
-document.getElementById('updateForm').addEventListener('submit',function(e){
- e.preventDefault();
- const s=encodeURIComponent('Join PickleWithPurpose Update List');
- const b=encodeURIComponent('Name: '+document.getElementById('uname').value+'\nEmail: '+document.getElementById('uemail').value+'\n\nPlease add me to updates for future PickleWithPurpose events.');
- window.location.href='mailto:gaiagatto@icloud.com?cc=rafischaeffer@icloud.com&subject='+s+'&body='+b;
-});
-</script>
 </body>
 </html>
